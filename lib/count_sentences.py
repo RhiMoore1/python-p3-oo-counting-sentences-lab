@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 
 class MyString:
-  def __init__(self, value="any"):
+  def __init__(self, value=""):
     self.value = value
     
   def get_value(self):
@@ -25,8 +25,15 @@ class MyString:
     return self.value.endswith('!')
   
   def count_sentences(self):
-    pass
-    
+    value = self.value.replace('!', '.').replace('?', '.')
+    print('Modified value:', value) 
+    sentences = [sentence.strip() for sentence in value.split('.') if sentence.strip()]
+    print("Sentences:", sentences)
+    print("How many sentences:", len(sentences))
+    count = len(sentences)
+    return count
+
   
+
 
 
